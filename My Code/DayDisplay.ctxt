@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=DayDisplay
+comment0.text=\r\n\ DayDisplay\ class\ definition.\r\n\r\n\ @author\ Mike\ Mulder\r\n\ @version\ 1.0\r\n
+comment1.params=theDayNumber
+comment1.target=DayDisplay(int)
+comment2.params=nameOfTheDay
+comment2.target=DayDisplay(java.lang.String)
+comment3.params=theDay
+comment3.target=DayDisplay(NumberDisplay)
+comment4.params=
+comment4.target=java.lang.String\ getDayOfTheWeek()
+comment5.params=
+comment5.target=void\ incrementDay()
+comment6.params=
+comment6.target=java.lang.String\ getWhatDayIsTomorrow()
+comment7.params=
+comment7.target=void\ printDetails()
+numComments=8
