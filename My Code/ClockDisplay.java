@@ -22,7 +22,7 @@ public class ClockDisplay
     public static final String  MORNING_SUFFIX      = "a.m.";
     public static final String  EVENING_SUFFIX      = "p.m.";
     public static final int     MIDNIGHT_HOUR       = 0;
-    public static final int     HOUR_PER_DAY        = 0;
+    public static final int     HOURS_PER_DAY        = 0;
 
     private NumberDisplay hours;
     private NumberDisplay minutes;

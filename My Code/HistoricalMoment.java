@@ -2,8 +2,8 @@
 /**
  * Write a description of class HistoricalMoment here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Monika Szucs
+ * @version October 21, 2018
  */
 public class HistoricalMoment
 {
@@ -19,7 +19,11 @@ public class HistoricalMoment
         eventName="untitled event";
         timeOfEvent=new ClockDisplay(MIDNIGHT_HOUR,MINUTE_ZERO);
     }
-
+    
+    /**
+     * Constructor for objects of class HistoricalMoment
+     * @param nameOfTheEvent takes in a string value of the event
+     */
     public HistoricalMoment(String nameOfTheEvent)
     {
         if((nameOfTheEvent==null)||(nameOfTheEvent.equals(""))){
@@ -33,6 +37,11 @@ public class HistoricalMoment
         }
     }
     
+    /**
+     * Constructor for objects of class HistoricalMoment
+     * @param nameOfTheEvent takes in a string value of the event
+     * @param theTime takes the time from the ClockDisplay
+     */
     public HistoricalMoment(String nameOfTheEvent, ClockDisplay theTime)
     {
         if((nameOfTheEvent==null)||(nameOfTheEvent.equals("")))
@@ -46,13 +55,20 @@ public class HistoricalMoment
         }
     }
     
+    
+    /**
+     * A method adds one minute to the timeOfEvent.
+     */
     public void addMinuteToTimeOfEvent(){
-        timeTick();
+        ///timeOfEvents timeTick();
     }
     
+    /**
+     * A method that calls ClockDisplay instance variable's getTime() method and which prints details in certian formats.
+     */
     public void printDetails()
     {
-        getTime();
+        //getTime();
     }
     
 }
