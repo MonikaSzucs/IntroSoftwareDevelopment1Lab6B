@@ -60,7 +60,7 @@ public class HistoricalMoment
      * A method adds one minute to the timeOfEvent.
      */
     public void addMinuteToTimeOfEvent(){
-        ///timeOfEvents timeTick();
+        timeOfEvents =  minutes.timeTick();
     }
     
     /**
@@ -69,6 +69,7 @@ public class HistoricalMoment
     public void printDetails()
     {
         //getTime();
+        System.out.print("At " + hours.getValue() + ":" + minutes.getValue() + " " + EVENING_SUFFIX + ", Titanic hit an iceberg!");
     }
     
 }
