@@ -17,7 +17,7 @@ public class HistoricalMoment
     public HistoricalMoment()
     {
         eventName="untitled event";
-        timeOfEvent=new ClockDisplay(MIDNIGHT_HOUR,MINUTE_ZERO);
+        timeOfEvent=new ClockDisplay(ClockDisplay.MIDNIGHT_HOUR,ClockDisplay.MINUTE_ZERO);
     }
     
     /**
@@ -28,12 +28,12 @@ public class HistoricalMoment
     {
         if((nameOfTheEvent==null)||(nameOfTheEvent.equals(""))){
             eventName="untited event";
-            timeOfEvent=new ClockDisplay(MIDNIGHT_HOUR,MINUTE_ZERO);
+            timeOfEvent=new ClockDisplay(ClockDisplay.MIDNIGHT_HOUR,ClockDisplay.MINUTE_ZERO);
         }
         else
         {
             eventName=nameOfTheEvent;
-            timeOfEvent=new ClockDisplay(MIDNIGHT_HOUR,MINUTE_ZERO);
+            timeOfEvent=new ClockDisplay(ClockDisplay.MIDNIGHT_HOUR,ClockDisplay.MINUTE_ZERO);
         }
     }
     
@@ -60,7 +60,7 @@ public class HistoricalMoment
      * A method adds one minute to the timeOfEvent.
      */
     public void addMinuteToTimeOfEvent(){
-        timeOfEvents =  minutes.timeTick();
+        timeOfEvent.timeTick();
     }
     
     /**
@@ -69,7 +69,8 @@ public class HistoricalMoment
     public void printDetails()
     {
         //getTime();
-        System.out.print("At " + hours.getValue() + ":" + minutes.getValue() + " " + EVENING_SUFFIX + ", Titanic hit an iceberg!");
+        System.out.print("At " + timeOfEvent.getTime() + " " + ClockDisplay.EVENING_SUFFIX + ", Titanic hit an iceberg!");
+        
     }
     
 }
