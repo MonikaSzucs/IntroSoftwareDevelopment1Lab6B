@@ -69,7 +69,7 @@ public class HistoricalMoment
     public void printDetails()
     {
         //getTime();
-        System.out.print("At " + timeOfEvent.getTime() + " " + ClockDisplay.EVENING_SUFFIX + ", Titanic hit an iceberg!");
+        System.out.print("At " + timeOfEvent.getTime() + " " + ClockDisplay.EVENING_SUFFIX + ", " + eventName);
         
     }
     
