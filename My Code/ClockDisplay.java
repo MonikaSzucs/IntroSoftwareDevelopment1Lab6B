@@ -28,7 +28,6 @@ public class ClockDisplay
     private NumberDisplay hours;
     private NumberDisplay minutes;
     private String displayString;    // simulates the actual display
-   
 
     /**
      * Constructor for ClockDisplay objects. This constructor 
@@ -91,44 +90,30 @@ public class ClockDisplay
      */
     private void updateDisplay()
     {
-        System.out.println(hours.getValue() + ":" + minutes.getValue());
-        
-        if(((hours.getValue()>=FIRST_MORNING_HOUR) && (minutes.getValue()>0)) && (hours.getValue()<=LAST_MORNING_HOUR)){
-            if(minutes.getValue()<10){
-                System.out.println(hours.getValue() + ":" + FIRST_MORNING_HOUR + minutes.getValue() + " " + MORNING_SUFFIX);
-            }
-            else{
-                System.out.println(hours.getValue() + ":" + minutes.getValue() + " " + MORNING_SUFFIX);
-            }
+        int currHours;
+        int currMinutes;
+        String currSuffix;
+
+        if(hours.getValue()==0){
+            currHours=12;
+            currSuffix = MORNING_SUFFIX;
+        } else if(hours.getValue()>12){
+            currHours=hours.getValue()-12;
+            currSuffix = EVENING_SUFFIX;
+        }else{
+            currHours=hours.getValue();
+            currSuffix = MORNING_SUFFIX;
         }
-        else if((hours.getValue()==FIRST_EVENING_HOUR) && (minutes.getValue()==0)){
-            System.out.println(hours.getValue() + ":" + minutes.getValue() + FIRST_MORNING_HOUR + " " + EVENING_SUFFIX + " (noon)");
+
+        if(minutes.getValue()<10){
+            displayString = currHours + ":0"+ minutes.getValue() + " " + currSuffix;
+            System.out.println(displayString);
+        } else{
+            displayString = currHours + ":"+ minutes.getValue() + " " + currSuffix + " ";
+            System.out.println(displayString);
         }
-        else if(hours.getValue()==MIDNIGHT_HOUR){
-            System.out.println(hours.getValue() + ":" + minutes.getValue() + FIRST_MORNING_HOUR + " " + MORNING_SUFFIX + " (midnight)");
-        }
-        else if(((hours.getValue()>=FIRST_EVENING_HOUR) && (minutes.getValue()>0)) && (hours.getValue()<=LAST_EVENING_HOUR)){
-            if(hours.getValue()==FIRST_EVENING_HOUR){
-                if(minutes.getValue()<10){
-                System.out.println(hours.getValue() + ":" + FIRST_MORNING_HOUR + minutes.getValue() + " " + EVENING_SUFFIX);
-            }
-                else{
-                    System.out.println(hours.getValue() + ":" + minutes.getValue() + " " + EVENING_SUFFIX);
-                } 
-            }
-            else{
-                if(minutes.getValue()<10){
-                System.out.println(hours.getValue()-FIRST_EVENING_HOUR + ":" + FIRST_MORNING_HOUR + minutes.getValue() + " " + EVENING_SUFFIX);
-            }
-                else{
-                    System.out.println(hours.getValue()-FIRST_EVENING_HOUR + ":" + minutes.getValue() + " " + EVENING_SUFFIX);
-                } 
-            }
-        }
-        else{
-            throw new IllegalArgumentException("Invalid arguments. must be a 24 hours clock.");
-        }
-        
+
+
         //System.out.println(hours.getDisplayValue() + minutes.getDisplayValue());
         //displayString = hours.getDisplayValue() + ":" + 
         //minutes.getDisplayValue();

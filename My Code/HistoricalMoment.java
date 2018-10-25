@@ -27,7 +27,7 @@ public class HistoricalMoment
     public HistoricalMoment(String nameOfTheEvent)
     {
         if((nameOfTheEvent==null)||(nameOfTheEvent.equals(""))){
-            eventName="untited event";
+            eventName="untitled event";
             timeOfEvent=new ClockDisplay(ClockDisplay.MIDNIGHT_HOUR,ClockDisplay.MINUTE_ZERO);
         }
         else
@@ -46,6 +46,7 @@ public class HistoricalMoment
     {
         if((nameOfTheEvent==null)||(nameOfTheEvent.equals("")))
         {
+            eventName="untitled event";
             throw new IllegalArgumentException("illegal event name");
         }
         else
@@ -69,7 +70,7 @@ public class HistoricalMoment
     public void printDetails()
     {
         //getTime();
-        System.out.print("At " + timeOfEvent.getTime() + " " + ClockDisplay.EVENING_SUFFIX + ", " + eventName);
+        System.out.println("At " + timeOfEvent.getTime() + ", " + eventName);
         
     }
     
