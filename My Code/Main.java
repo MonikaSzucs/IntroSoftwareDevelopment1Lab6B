@@ -2,8 +2,8 @@
 /**
  * Write a description of class Main here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Monika Szuc
+ * @version October 24, 2018
  */
 public class Main
 {

@@ -14,6 +14,7 @@
  */
 public class ClockDisplay
 {
+    // static final instance variables
     public static final int     FIRST_MORNING_HOUR  = 0;
     public static final int     LAST_MORNING_HOUR   = 11;
     public static final int     FIRST_EVENING_HOUR  = 12;
@@ -24,7 +25,8 @@ public class ClockDisplay
     public static final int     MIDNIGHT_HOUR       = 0;
     public static final int     HOURS_PER_DAY       = 0;
     public static final int     MINUTE_ZERO         = 0;
-
+    
+    //instance variables
     private NumberDisplay hours;
     private NumberDisplay minutes;
     private String displayString;    // simulates the actual display
@@ -113,9 +115,5 @@ public class ClockDisplay
             System.out.println(displayString);
         }
 
-
-        //System.out.println(hours.getDisplayValue() + minutes.getDisplayValue());
-        //displayString = hours.getDisplayValue() + ":" + 
-        //minutes.getDisplayValue();
     }
 }
