@@ -97,20 +97,32 @@ public class ClockDisplay
         String currSuffix;
 
         if(hours.getValue()==0){
-            currHours=12;
+            currHours=FIRST_EVENING_HOUR;
             currSuffix = MORNING_SUFFIX;
-        } else if(hours.getValue()>12){
-            currHours=hours.getValue()-12;
+        } else if(hours.getValue()>FIRST_EVENING_HOUR){
+            currHours=hours.getValue()-FIRST_EVENING_HOUR;
             currSuffix = EVENING_SUFFIX;
-        }else{
+        }else if(hours.getValue()==FIRST_EVENING_HOUR){
+            currHours=hours.getValue();
+            currSuffix = EVENING_SUFFIX;
+        }
+        else{
             currHours=hours.getValue();
             currSuffix = MORNING_SUFFIX;
         }
 
-        if(minutes.getValue()<10){
+        if((minutes.getValue()==0) && (hours.getValue()==FIRST_EVENING_HOUR)){
+            displayString = currHours + ":0"+ minutes.getValue() + " " + currSuffix + " (noon)";
+            System.out.println(displayString);
+        } else if((minutes.getValue()==0)&&(currSuffix==MORNING_SUFFIX)){
+            displayString = currHours + ":0"+ minutes.getValue() + " " + currSuffix + " (midnight)";
+            System.out.println(displayString);
+        }
+        else if(minutes.getValue()<10){
             displayString = currHours + ":0"+ minutes.getValue() + " " + currSuffix;
             System.out.println(displayString);
-        } else{
+        } 
+        else{
             displayString = currHours + ":"+ minutes.getValue() + " " + currSuffix + " ";
             System.out.println(displayString);
         }
